@@ -1,5 +1,5 @@
-import { ToggleComponent } from "./formElements/ToggleComponent";
-import { SubmitBtn } from "./formElements/SubmitBtn";
+import { ToggleComponent } from "../formElements/ToggleComponent";
+import { SubmitBtn } from "../formElements/SubmitBtn";
 import { SendHorizontal } from 'lucide-react';
 export const TemplateForm = () => {
   return (

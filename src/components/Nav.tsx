@@ -1,5 +1,5 @@
 import { NavLink } from "react-router";
-import { TemplateForm } from "./TemplateForm";
+import { TemplateForm } from "./forms/TemplateForm";
 
 export const Nav = () => {
   return (
