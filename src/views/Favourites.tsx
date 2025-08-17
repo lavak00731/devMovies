@@ -1,7 +1,8 @@
-import React from 'react'
-
+import MainLayout from "../layouts/MainLayout"
 export const Favourites = () => {
   return (
-    <div>Favourites</div>
+    <MainLayout>
+      <div>Favourites</div>
+    </MainLayout>    
   )
 }

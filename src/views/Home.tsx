@@ -1,7 +1,10 @@
-import React from 'react'
+import MainLayout from "../layouts/MainLayout"
 
 export const Home = () => {
   return (
-    <div>Home</div>
+    <MainLayout>
+      <div>Home</div>
+    </MainLayout>
+    
   )
 }

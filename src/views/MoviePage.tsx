@@ -1,7 +1,9 @@
-import React from 'react'
+import MainLayout from "../layouts/MainLayout"
 
 export const MoviePage = () => {
   return (
-    <div>MoviePage</div>
+    <MainLayout>
+      <div>MoviePage</div>
+    </MainLayout>    
   )
 }

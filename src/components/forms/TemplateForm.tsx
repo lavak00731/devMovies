@@ -1,6 +1,6 @@
 import { ToggleComponent } from "../formElements/ToggleComponent";
 import { SubmitBtn } from "../formElements/SubmitBtn";
-import { SendHorizontal } from 'lucide-react';
+import { Moon } from 'lucide-react';
 export const TemplateForm = () => {
   return (
     <form action="">
@@ -9,7 +9,7 @@ export const TemplateForm = () => {
           label="Submit" 
           hasIcon={true} 
           iconRight={true}
-          Icon={() => <SendHorizontal />} 
+          Icon={() => <Moon />} 
           isLabelVisible={false}/>
     </form>
   )

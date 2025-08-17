@@ -1,7 +1,9 @@
-import React from 'react'
+import MainLayout from "../layouts/MainLayout"
 
 export const NotFound = () => {
   return (
-    <div>NotFound</div>
+    <MainLayout>
+      <div>NotFound</div>
+    </MainLayout>
   )
 }
