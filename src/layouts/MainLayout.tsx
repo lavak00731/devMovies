@@ -8,8 +8,9 @@ interface MainLayoutProps {
 
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => (
   <>
+    <a className="focus:not-sr-only sr-only" href="#main-content">Skip to main content</a>
     <Header />
-    <main>
+    <main id="#main-content" aria-labelledby="pageHeading">
       {children}
     </main>
     <Footer />

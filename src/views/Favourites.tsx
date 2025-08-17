@@ -1,10 +1,11 @@
 import useChangeTitle from "../customHooks/useChangeTitle";
-import MainLayout from "../layouts/MainLayout"
+import MainLayout from "../layouts/MainLayout";
+import { MainHeading } from "../components/MainHeading";
 export const Favourites = () => {
   useChangeTitle("Favourites");
   return (
     <MainLayout>
-      <div>Favourites</div>
+      <MainHeading text={"Favourites"} />
     </MainLayout>    
   )
 }
