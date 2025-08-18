@@ -1,7 +1,13 @@
-import { useId } from "react"
+import { useId } from "react";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { addTerm } from "../../features/SearchSlice";
 
-export const InputSearch = ({label, setmovieToSearch}:{label:string, setmovieToSearch: (value: string) => void}) => {
+
+export const InputSearch = ({label}:{label:string} ) => {
     const id = useId();
+    const dispatch = useDispatch();
+    const searchedTems = useSelector((state: any) => state.search.searchedTerms);
   return (
     <>
         <label htmlFor="id">{label}</label>
@@ -11,10 +17,15 @@ export const InputSearch = ({label, setmovieToSearch}:{label:string, setmovieToS
         placeholder="Search..."
         id={id}
         list={id+'_movies'}
-        onChange={(e)=>setmovieToSearch(e.target.value)}
+        onChange={(e)=>dispatch(addTerm(e.target.value))}
         required
       />
-        <datalist id={id+'_movies'}>        
+        <datalist id={id+'_movies'}>  
+          {
+            searchedTems.map((term: string, index: number) => (
+              <option key={index} value={term} />
+            ))
+          }      
         </datalist>
     </>      
   )

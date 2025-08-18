@@ -1,29 +1,33 @@
+import { useEffect, useState } from "react";
 import MainLayout from "../layouts/MainLayout";
 import useChangeTitle from "../customHooks/useChangeTitle";
 import { MainHeading } from "../components/MainHeading";
 import { SearchForm } from "../components/forms/SearchForm";
-import { useEffect, useState } from "react";
+import { MovieGrid } from "../components/MovieGrid";
+import { useSelector } from "react-redux";
+//import { useDispatch } from "react-redux";
 
 export const Home = () => {
   useChangeTitle("Home");
-  const [movieToSearch, setmovieToSearch] = useState();
-  
+  //const [movieToSearch, setmovieToSearch] = useState('');
+  //const dispatch = useDispatch();
+  const term = useSelector((state: any) => state.search.term);
   useEffect(() => {
-    console.log(movieToSearch)
+    console.log(term)
   
     return () => {
       
     }
-  }, [movieToSearch])
+  }, [term])
   
   
   return (
     <MainLayout>
       <MainHeading text="Home"/>
       <hr />
-      <div className="">
-        <SearchForm setmovieToSearch={setmovieToSearch} />
-      </div>
+      <SearchForm  />
+      <MovieGrid />
+
     </MainLayout>
     
   )
