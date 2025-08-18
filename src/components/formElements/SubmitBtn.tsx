@@ -1,9 +1,9 @@
 import type { BtnInterface } from "../../types/BtnInterface"
 
-export const SubmitBtn:React.FC<BtnInterface> = ({label, hasIcon, iconRight, Icon, isLabelVisible }) => {
+export const SubmitBtn:React.FC<BtnInterface> = ({label, hasIcon, iconRight, type, Icon, isLabelVisible }) => {
     if(iconRight) {
          return (
-            <button type="submit">
+            <button type={type}>
                 {
                 hasIcon && isLabelVisible && Icon ? (
                     <>                   
@@ -23,7 +23,7 @@ export const SubmitBtn:React.FC<BtnInterface> = ({label, hasIcon, iconRight, Ico
         )
     }
   return (
-    <button type="submit">
+    <button type={type}>
         {
           hasIcon && isLabelVisible && Icon ? (
             <>

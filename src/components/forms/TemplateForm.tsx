@@ -6,11 +6,12 @@ export const TemplateForm = () => {
     <form action="">
         <ToggleComponent label={"Swit to Dark Mode"} />
         <SubmitBtn 
-          label="Submit" 
+          label="Change Theme" 
           hasIcon={true} 
           iconRight={true}
+          type={"submit"}
           Icon={() => <Moon />} 
-          isLabelVisible={false}/>
+          isLabelVisible={true}/>
     </form>
   )
 }
