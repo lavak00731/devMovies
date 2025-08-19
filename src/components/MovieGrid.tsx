@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 export const MovieGrid = () => {
     const [searchTerm, setSearchTerm] = useState('456');

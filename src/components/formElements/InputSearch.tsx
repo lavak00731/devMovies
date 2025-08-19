@@ -1,6 +1,5 @@
 import { useId } from "react";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { addTerm } from "../../features/SearchSlice";
 
 
@@ -12,7 +11,7 @@ export const InputSearch = ({label}:{label:string} ) => {
     <>
         <label htmlFor="id">{label}</label>
         <input
-        type="text"
+        type="search"
         className=""
         placeholder="Search..."
         id={id}

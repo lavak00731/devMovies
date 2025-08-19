@@ -1,4 +1,8 @@
+import type { MovieInterface } from "./MovieInterface"
 export interface SearchInitState {
-    term: string,
-    searchedTerms: string[]
+    term: string;
+    searchedTerms: string[];
+    isSearching: boolean,
+    isGoodResponse: boolean,
+    movies:MovieInterface[];
 }
