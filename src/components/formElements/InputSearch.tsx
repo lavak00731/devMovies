@@ -6,7 +6,7 @@ import { addTerm } from "../../features/SearchSlice";
 export const InputSearch = ({label}:{label:string} ) => {
     const id = useId();
     const dispatch = useDispatch();
-    const searchedTems = useSelector((state: any) => state.search.searchedTerms);
+    const searchedTerms = useSelector((state: any) => state.search.searchedTerms);
   return (
     <>
         <label htmlFor="id">{label}</label>
@@ -21,7 +21,7 @@ export const InputSearch = ({label}:{label:string} ) => {
       />
         <datalist id={id+'_movies'}>  
           {
-            searchedTems.map((term: string, index: number) => (
+            searchedTerms.map((term: string, index: number) => (
               <option key={index} value={term} />
             ))
           }      

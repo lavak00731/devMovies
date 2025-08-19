@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import MainLayout from "../layouts/MainLayout";
 import useChangeTitle from "../customHooks/useChangeTitle";
 import { MainHeading } from "../components/MainHeading";
@@ -20,7 +19,6 @@ export const Home = () => {
       <hr />
       <SearchForm  />
       <MovieGrid />
-
     </MainLayout>
     
   )
