@@ -1,8 +1,7 @@
 import { useSelector } from "react-redux";
 import { Loading } from "./Loading"
 import { Result } from "./Result";
-import { MovieCard } from "./MovieCard";
-import type { MovieInterface } from "../types/MovieInterface";
+import MoviesSearched from "./MoviesSearched";
 
 
 export const MovieGrid = () => {
@@ -14,35 +13,15 @@ export const MovieGrid = () => {
 
   return (
     <>
-     {
-      term !== '' ? <div className="">
-          {isSearching && <Loading />}
-          <Result response={isGoodResponse} movie={lastMovie} />       
-      </div> : null
-     }
-      
-            
         {
-          movies.length > 0 ?
-          <div className="">            
-            <h2>Previous Results</h2>
-            <ul>
-              {movies.map((movie:MovieInterface, i:number) => {
-                if (i === 0) {
-                  return !isGoodResponse ? (
-                    <li key={movie.imdbID} className="mb-4">
-                      <MovieCard movie={movie} />
-                    </li>
-                  ) : null;
-                }
-                return (
-                  <li key={movie.imdbID} className="mb-4">
-                    <MovieCard movie={movie} />
-                  </li>
-                );
-              })}
-            </ul> 
-         </div> : null
+          term !== '' ? <>
+            {isSearching && <Loading />}
+              <Result response={isGoodResponse} movie={lastMovie} /> 
+          </> :null
+        }            
+        {
+          movies.length > 0 ? <MoviesSearched movies={movies} isGoodResponse={isGoodResponse} />
+           : null
         }
         
 
