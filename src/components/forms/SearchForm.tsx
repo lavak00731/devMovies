@@ -1,9 +1,10 @@
 import { Search } from "lucide-react"
 import { InputSearch } from "../formElements/InputSearch"
-import { SubmitBtn } from "../formElements/SubmitBtn";
+import { Btn } from "../formElements/Btn";
 import { useSelector, useDispatch } from "react-redux";
 import getData from "../../services/getData";
 import { addSearchedTerms, addMovies, searching, responseType, lastMovie } from "../../features/SearchSlice";
+import ElementStyle from "../../styles/elements/ElementsStyle";
 
 export const SearchForm = () => {
   const dispatch = useDispatch();
@@ -38,7 +39,8 @@ export const SearchForm = () => {
             <InputSearch label={"Search Movies"}  />
           </div>
           <div>
-            <SubmitBtn 
+            <Btn 
+            className={ElementStyle.btn}
             label="Search" 
             hasIcon={true} 
             iconRight={true}

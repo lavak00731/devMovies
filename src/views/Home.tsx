@@ -7,7 +7,7 @@ import { MovieGrid } from "../components/MovieGrid";
 //import { useDispatch } from "react-redux";
 
 export const Home = () => {
-  useChangeTitle("Home");
+  useChangeTitle("Home - DevMovies");
  
   return (
     <MainLayout>
