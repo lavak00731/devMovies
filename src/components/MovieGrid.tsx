@@ -1,26 +1,33 @@
 import { useSelector } from "react-redux";
 import { Loading } from "./Loading"
 import { Result } from "./Result";
-import { useEffect } from "react";
+
 import { MovieCard } from "./MovieCard";
 import type { MovieInterface } from "../types/MovieInterface";
+import { useEffect } from "react";
 
 export const MovieGrid = () => {
-  const searchTerm = useSelector((state: any) => state.search.searchTerm);
   const isSearching = useSelector((state: any) => state.search.isSearching);
   const isGoodResponse = useSelector((state: any) => state.search.isGoodResponse);
   const movies = useSelector((state: any) => state.search.movies);
-  console.log(movies)
-  if(movies.length === 0) {
-    return
-  }
+  console.log(isGoodResponse)
+
+  useEffect(() => {
+
+  
+    return () => {
+
+    }
+  }, [isSearching, isGoodResponse])
+  
   return (
     <>
       <div className="">
-        {
-          isSearching ? <Loading/> : <Result response={isGoodResponse} movie={movies[0]} />
+
+          {isSearching && <Loading />}
+          <Result response={isGoodResponse} movie={movies[0]} />
           
-        }
+        
       </div>
       <div className="">
         <h2>Previous Results</h2>

@@ -18,6 +18,7 @@ export const SearchForm = () => {
       dispatch(addMovies(data));
       return
     }
+    dispatch(searching(false));
     dispatch(responseType(false))
   }
    const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
