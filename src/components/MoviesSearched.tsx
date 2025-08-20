@@ -1,4 +1,4 @@
-import { MovieCard } from './MovieCard';
+import MovieCard  from './MovieCard';
 import type { MovieInterface } from '../types/MovieInterface';
 import React from 'react';
 

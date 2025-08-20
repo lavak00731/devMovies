@@ -1,10 +1,11 @@
 
+import React from 'react';
 import type { MovieInterface } from '../types/MovieInterface';
 import ElementStyle from '../styles/elements/ElementsStyle';
 import { FallbackImage } from './FallbackImage';
 import { Link } from 'react-router';
 
-export const MovieCard = ({movie}:{movie:MovieInterface}) => {
+const MovieCard = ({movie}:{movie:MovieInterface}) => {
   console.log(movie)
   if(!movie) {
     return 
@@ -32,3 +33,4 @@ export const MovieCard = ({movie}:{movie:MovieInterface}) => {
     </div>
   )
 }
+export default React.memo(MovieCard)
