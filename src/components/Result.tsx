@@ -1,5 +1,5 @@
 import type { MovieInterface } from "../types/MovieInterface"
-import { MovieCard } from "./MovieCard";
+import  MovieCard from "./MovieCard";
 import { useSelector } from "react-redux";
 
 

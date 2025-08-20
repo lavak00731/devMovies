@@ -20,7 +20,7 @@ export const MovieGrid = () => {
           </> :null
         }            
         {
-          movies.length > 0 ? <MoviesSearched movies={movies} isGoodResponse={isGoodResponse} />
+          movies.length > 0 ? <MoviesSearched movies={movies} isGoodResponse={isGoodResponse} itemsPerPage={5} />
            : null
         }
         
