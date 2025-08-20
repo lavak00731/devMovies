@@ -23,15 +23,24 @@ export const MovieGrid = () => {
       </div>
             
         {
-           movies.length > 1  ?
+          movies.length > 0 ?
           <div className="">            
             <h2>Previous Results</h2>
             <ul>
-              {movies.map((movie:MovieInterface, i:number) => (
-                i > 0 ? <li key={movie.imdbID} className="mb-4">
-                  <MovieCard movie={movie} />
-                </li> : null
-              ))}
+              {movies.map((movie:MovieInterface, i:number) => {
+                if (i === 0) {
+                  return !isGoodResponse ? (
+                    <li key={movie.imdbID} className="mb-4">
+                      <MovieCard movie={movie} />
+                    </li>
+                  ) : null;
+                }
+                return (
+                  <li key={movie.imdbID} className="mb-4">
+                    <MovieCard movie={movie} />
+                  </li>
+                );
+              })}
             </ul> 
          </div> : null
         }
