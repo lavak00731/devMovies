@@ -7,6 +7,7 @@ const initialState: SearchInitState = {
     searchedTerms: [],
     isSearching: false,
     isGoodResponse: false,
+    requestMovie: null,
     movies: []
 }
 
@@ -21,6 +22,16 @@ const SearchSlice = createSlice({
             const isNotOnTheList = state.searchedTerms.find((term) => term === action.payload );
             if(!isNotOnTheList) {
                state.searchedTerms.push(action.payload)
+            }
+        },
+        lastMovie: (state, action) => {
+            if(action.payload) {
+                const isNotOnTheList = state.movies.find((movie) => movie.imdbID === action.payload.imdbID );
+                if(!isNotOnTheList) {
+                    state.requestMovie = action.payload;
+                }
+            } else {
+                state.requestMovie = null;
             }
         },
         addMovies: (state, action) => {
@@ -40,5 +51,5 @@ const SearchSlice = createSlice({
 
 
 
-export const { addTerm, addSearchedTerms, addMovies, searching, responseType } = SearchSlice.actions;
+export const { addTerm, addSearchedTerms, addMovies, searching, responseType, lastMovie } = SearchSlice.actions;
 export default SearchSlice.reducer;

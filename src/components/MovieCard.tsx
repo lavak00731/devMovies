@@ -6,7 +6,9 @@ import { Link } from 'react-router';
 
 export const MovieCard = ({movie}:{movie:MovieInterface}) => {
   console.log(movie)
-
+  if(!movie) {
+    return 
+  }
   
   return (
     <div className="rounded border-2 border-neutral-700 p-4 max-w-80 mb-1">

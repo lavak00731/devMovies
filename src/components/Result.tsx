@@ -11,7 +11,8 @@ export const Result = ({response, movie}:{response: string, movie?: MovieInterfa
                 response ? "One result for your search" : "Please try again, no results found"
             }
         </p>
-        {!response ? <MovieCard movie={movie}/> : null }
+
+        {response ? <MovieCard movie={movie}/> : null }
     </div>
     
   )

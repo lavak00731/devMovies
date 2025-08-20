@@ -8,11 +8,7 @@ import { MovieGrid } from "../components/MovieGrid";
 
 export const Home = () => {
   useChangeTitle("Home");
- // const [movies, setMovies] = useState([])
-  //const dispatch = useDispatch();
  
-  
-  
   return (
     <MainLayout>
       <MainHeading text="Home"/>

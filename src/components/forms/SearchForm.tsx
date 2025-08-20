@@ -3,7 +3,7 @@ import { InputSearch } from "../formElements/InputSearch"
 import { SubmitBtn } from "../formElements/SubmitBtn";
 import { useSelector, useDispatch } from "react-redux";
 import getData from "../../services/getData";
-import { addSearchedTerms, addMovies, searching, responseType } from "../../features/SearchSlice";
+import { addSearchedTerms, addMovies, searching, responseType, lastMovie } from "../../features/SearchSlice";
 
 export const SearchForm = () => {
   const dispatch = useDispatch();
@@ -13,11 +13,14 @@ export const SearchForm = () => {
     const data = await getData(term);
     dispatch(addSearchedTerms(term));
     if(data.Response === "True") {
+      dispatch(lastMovie(data))
       dispatch(responseType(true))
       dispatch(searching(false));
       dispatch(addMovies(data));
+
       return
     }
+    dispatch(lastMovie(null));
     dispatch(searching(false));
     dispatch(responseType(false))
   }
