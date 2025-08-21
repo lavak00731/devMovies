@@ -22,10 +22,11 @@
 }
 button > .lucide {
   display: inline-block;
-  margin-left: 1rem;
+  margin-right: 1rem;
 }
 button.icon-right > .lucide {
-  margin-right: 1rem;
+  margin-left: 1rem;
+  margin-right: initial;
 }
 button:has(.sr-only) > .lucide {
   margin:0;

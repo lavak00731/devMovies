@@ -5,10 +5,10 @@ import ElementStyle from "../../styles/elements/ElementsStyle";
 export const TemplateForm = () => {
   return (
     <form className="flex gap-1.5" action="">
-        <ToggleComponent label={"Swit to Dark Mode"} />
+        <ToggleComponent label={"Switch to Dark Mode"} />
         <Btn 
           className={ElementStyle.btn}
-          label="Change Theme" 
+          label="Confirm" 
           hasIcon={true} 
           iconRight={true}
           type={"submit"}
