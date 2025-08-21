@@ -1,6 +1,6 @@
 import { useId, type ChangeEvent } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addTerm } from "../../features/SearchSlice";
+import { addTerm, lastMovie } from "../../features/SearchSlice";
 import ElementStyle from "../../styles/elements/ElementsStyle";
 
 
@@ -10,6 +10,7 @@ export const InputSearch = ({label}:{label:string} ) => {
     const searchedTerms = useSelector((state: any) => state.search.searchedTerms);
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
       dispatch(addTerm(e.target.value))
+      dispatch(lastMovie(null)); // Reset last movie when input changes
     }
   return (
     <>

@@ -2,6 +2,8 @@ import { useEffect, useId, useRef, useState } from "react";
 import type { MovieInterface } from "../types/MovieInterface"
 import  MovieCard from "./MovieCard";
 import { useSelector } from "react-redux";
+import ComponentStyles from "../styles/components/ComponentSlyles";
+import ElementStyle from "../styles/elements/ElementsStyle";
 
 
 export const Result = ({response, movie, showError}:{response: string, movie?: MovieInterface, showError:boolean}) => {
@@ -11,12 +13,12 @@ export const Result = ({response, movie, showError}:{response: string, movie?: M
   return (
     <>
       { term !== ''  && (response && movie && !showError ?
-        <section  className="border-t-2 border-zinc-800 p-4 flex flex-col items-center gap-6" aria-labelledby={id}>
-          <h2 aria-live="polite" id={id} className="text-center oswald-title text-3xl text-zinc-800 text-balance">One result for your search</h2>
+        <section  className={ComponentStyles.resultWrapper} aria-labelledby={id}>
+          <h2 aria-live="polite" id={id} className={ElementStyle.subtitle}>One result for your search</h2>
 
           <MovieCard movie={movie}/>
         </section> 
-        : <section  className="text-center oswald-title text-3xl text-zinc-800 text-balance" aria-labelledby={id}>
+        : <section  className={ElementStyle.subtitle} aria-labelledby={id}>
           <h2 aria-live="polite" id={id} className="">No results found for your search</h2>
 
         </section> 

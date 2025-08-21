@@ -25,7 +25,10 @@ const SearchSlice = createSlice({
             }
         },
         lastMovie: (state, action) => {
-            if(!action.payload.Error) {
+            if(action.payload === null) {
+                state.requestMovie = null;
+            } else {
+                if(!action.payload.Error) {
                 const isNotOnTheList = state.movies.find((movie) => movie.imdbID === action.payload.imdbID );
                 if(!isNotOnTheList) {
                     state.requestMovie = action.payload;
@@ -33,6 +36,8 @@ const SearchSlice = createSlice({
             } else {
                 state.requestMovie = action.payload;
             }
+            }
+            
         },
         addMovies: (state, action) => {
             const isNotOnTheList = state.movies.find((movie) => movie.imdbID === action.payload.imdbID );
