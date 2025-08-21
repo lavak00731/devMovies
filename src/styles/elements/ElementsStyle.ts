@@ -5,7 +5,7 @@ const ElementStyle = {
     menuGrid: "flex flex-col flex-wrap gap-4 items-end",
     paragraph: "text-base text-zinc-800 mb-2 [&:not(:last-child)]:mb-2 libertinus-sans-regular",
     label: "libertinus-sans-bold text-base text-zinc-800 block mb-3",
-    searchInput: "border-2 border-neutral-700 libertinus-sans-regular rounded mb-6 p-2 focus-visible:outline-4 focus-visible:outline-sky-800 focus-visible:outline-offset-4",
+    searchInput: "border-2 border-neutral-700 libertinus-sans-regular rounded mb-6 p-2 focus-visible:outline-4 focus-visible:outline-sky-800 focus-visible:outline-offset-4 w-full",
     footerPara: "text-lg text-center text-zinc-800 mb-2 [&:not(:last-child)]:mb-2 libertinus-sans-bold"
 }
 export default ElementStyle;
