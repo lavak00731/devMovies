@@ -1,6 +1,7 @@
 import { useId } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addTerm } from "../../features/SearchSlice";
+import ElementStyle from "../../styles/elements/ElementsStyle";
 
 
 export const InputSearch = ({label}:{label:string} ) => {
@@ -9,10 +10,10 @@ export const InputSearch = ({label}:{label:string} ) => {
     const searchedTerms = useSelector((state: any) => state.search.searchedTerms);
   return (
     <>
-        <label htmlFor="id">{label}</label>
+        <label className={ElementStyle.label} htmlFor="id">{label}</label>
         <input
+        className={ElementStyle.searchInput}
         type="search"
-        className=""
         placeholder="Search..."
         id={id}
         list={id+'_movies'}

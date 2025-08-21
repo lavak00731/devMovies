@@ -4,6 +4,7 @@ import { Btn } from "../formElements/Btn";
 import { useSelector, useDispatch } from "react-redux";
 import getData from "../../services/getData";
 import { addSearchedTerms, addMovies, searching, responseType, lastMovie } from "../../features/SearchSlice";
+import ComponentStyles from "../../styles/components/ComponentSlyles";
 import ElementStyle from "../../styles/elements/ElementsStyle";
 
 export const SearchForm = () => {
@@ -33,7 +34,7 @@ export const SearchForm = () => {
  
 
   return (
-    <div className="">
+    <div className={ComponentStyles.searchForm}>
       <form onSubmit={(e) => handleSearch(e)} action="">
           <div>
             <InputSearch label={"Search Movies"}  />
