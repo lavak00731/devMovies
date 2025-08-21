@@ -3,6 +3,6 @@ import ComponentStyles from '../styles/components/ComponentSlyles'
 
 export const MainHeading = ({text}:{text:string}) => {
   return (
-    <h1 className={ComponentStyles.MainHeading} id="pageHeading">{text}</h1>
+    <h1 className={ComponentStyles.mainHeading} id="pageHeading">{text}</h1>
   )
 }
