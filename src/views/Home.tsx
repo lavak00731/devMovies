@@ -12,7 +12,6 @@ export const Home = () => {
     <MainLayout>
       <ViewLayout>
         <MainHeading text="Home"/>
-        <hr />
         <SearchForm  />
         <MovieGrid />
       </ViewLayout>      
