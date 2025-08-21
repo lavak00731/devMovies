@@ -12,10 +12,7 @@ const MoviesSearched = ({movies, isGoodResponse, itemsPerPage}:{movies: MovieInt
 
     const handlePageClick = (event: { selected: number }) => {
         const newOffset = (event.selected * itemsPerPage) % movies.length;
-        console.log(
-        `User requested page number ${event.selected}, which is offset ${newOffset}`
-    );
-    setItemOffset(newOffset);
+        setItemOffset(newOffset);
   };
   if(movies.length < 2) {
     return;

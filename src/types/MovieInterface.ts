@@ -26,5 +26,6 @@ export interface MovieInterface {
     BoxOffice: string;
     Production: string;
     Website: string;
-  Response: string;
+    Response: string;
+    Error?:string;
 }

@@ -10,13 +10,16 @@ export const MovieGrid = () => {
   const movies = useSelector((state: any) => state.search.movies);
   const term = useSelector((state:any) => state.search.term);
   const lastMovie  = useSelector((state:any) => state.search.requestMovie)
-
+  console.log(lastMovie)
   return (
     <>
         {
-          term !== '' ? <>
+          term !== '' && lastMovie  !== null ? <>
             {isSearching && <Loading />}
-            <Result response={isGoodResponse} movie={lastMovie} /> 
+            {lastMovie && lastMovie.Error  
+            ? <Result response={isGoodResponse} movie={lastMovie} showError={true} />
+            : <Result response={isGoodResponse} movie={lastMovie} showError={false} /> 
+            }
           </> :null
         }            
         {

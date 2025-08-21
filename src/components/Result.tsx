@@ -1,36 +1,27 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import type { MovieInterface } from "../types/MovieInterface"
 import  MovieCard from "./MovieCard";
 import { useSelector } from "react-redux";
 
 
-export const Result = ({response, movie}:{response: string, movie?: MovieInterface}) => {
-  const term = useSelector((state:any) => state.search.term);
-  const movies = useSelector((state:any) => state.search.movies);
-  const prevLength = useRef(movies.length);
-  const [isMoviesAdded, setisMoviesAdded] = useState(false)
-  useEffect(() => {
-    if (movies.length > prevLength.current) {
-    setisMoviesAdded(true)
-  }
-  prevLength.current = movies.length;
-  
-    return () => {
-      setisMoviesAdded(false)
-    }
-  }, [movies.length])
-  
-  console.log(term)
-  return (
-    <div className="">
-        {term !== ''&& isMoviesAdded && (
-          <p aria-live="polite">
-            { response ? "One result for your search" : "Please try again, no results found"}
-          </p>
-        )}
+export const Result = ({response, movie, showError}:{response: string, movie?: MovieInterface, showError:boolean}) => {
+  const term = useSelector((state:any) => state.search.term); 
+  const id = useId();
+  console.log(movie)
 
-        {response && movie && isMoviesAdded  ? <MovieCard movie={movie}/> : null }
-    </div>
-    
+  return (
+    <>
+      { term !== ''  && (response && movie && !showError ?
+        <section  className="border-t-2 border-zinc-800 p-4 flex flex-col items-center gap-6" aria-labelledby={id}>
+          <h2 aria-live="polite" id={id} className="text-center oswald-title text-3xl text-zinc-800 text-balance">One result for your search</h2>
+
+          <MovieCard movie={movie}/>
+        </section> 
+        : <section  className="text-center oswald-title text-3xl text-zinc-800 text-balance" aria-labelledby={id}>
+          <h2 aria-live="polite" id={id} className="">No results found for your search</h2>
+
+        </section> 
+      )}
+    </>    
   )
 }

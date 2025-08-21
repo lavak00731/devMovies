@@ -1,4 +1,4 @@
-import { useId } from "react";
+import { useId, type ChangeEvent } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addTerm } from "../../features/SearchSlice";
 import ElementStyle from "../../styles/elements/ElementsStyle";
@@ -8,6 +8,9 @@ export const InputSearch = ({label}:{label:string} ) => {
     const id = useId();
     const dispatch = useDispatch();
     const searchedTerms = useSelector((state: any) => state.search.searchedTerms);
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+      dispatch(addTerm(e.target.value))
+    }
   return (
     <>
         <label className={ElementStyle.label} htmlFor="id">{label}</label>
@@ -17,7 +20,7 @@ export const InputSearch = ({label}:{label:string} ) => {
         placeholder="Search..."
         id={id}
         list={id+'_movies'}
-        onChange={(e)=>dispatch(addTerm(e.target.value))}
+        onChange={handleChange}
         required
       />
         <datalist id={id+'_movies'}>  
