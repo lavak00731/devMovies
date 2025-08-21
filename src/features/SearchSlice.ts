@@ -29,13 +29,13 @@ const SearchSlice = createSlice({
                 state.requestMovie = null;
             } else {
                 if(!action.payload.Error) {
-                const isNotOnTheList = state.movies.find((movie) => movie.imdbID === action.payload.imdbID );
-                if(!isNotOnTheList) {
+                    const isNotOnTheList = state.movies.find((movie) => movie.imdbID === action.payload.imdbID );
+                    if(!isNotOnTheList) {
+                        state.requestMovie = action.payload;
+                    }
+                } else {
                     state.requestMovie = action.payload;
                 }
-            } else {
-                state.requestMovie = action.payload;
-            }
             }
             
         },

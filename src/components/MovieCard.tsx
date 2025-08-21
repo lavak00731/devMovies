@@ -13,7 +13,7 @@ const MovieCard = ({movie}:{movie:MovieInterface}) => {
   
   return (
     <div className="rounded border-2 border-neutral-700 p-4 max-w-80 mb-1">
-        <figure className="block mb-2">
+        <figure className="mb-2 min-h-[421px] flex flex-col items-center">
           <FallbackImage src={movie.Poster} alt=""/>
         </figure>
         <div className="border-t-2 border-neutral-700 pt-4">

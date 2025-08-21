@@ -10,7 +10,6 @@ export const MovieGrid = () => {
   const movies = useSelector((state: any) => state.search.movies);
   const term = useSelector((state:any) => state.search.term);
   const lastMovie  = useSelector((state:any) => state.search.requestMovie)
-  console.log(lastMovie)
   return (
     <>
         {

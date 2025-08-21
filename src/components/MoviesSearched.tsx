@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useId, useState } from 'react';
 import MovieCard  from './MovieCard';
 import type { MovieInterface } from '../types/MovieInterface';
 import ReactPaginate from 'react-paginate';
+import ComponentStyles from '../styles/components/ComponentSlyles';
+import ElementStyle from '../styles/elements/ElementsStyle';
 
-const MoviesSearched = ({movies, isGoodResponse, itemsPerPage}:{movies: MovieInterface[], isGoodResponse: boolean, itemsPerPage: number}) => {
+
+const MoviesSearched = ({movies, itemsPerPage}:{movies: MovieInterface[], itemsPerPage: number}) => {
+    const id = useId()
     const [itemOffset, setItemOffset] = useState(0);
     const endOffset = itemOffset + itemsPerPage;
 
@@ -14,26 +18,17 @@ const MoviesSearched = ({movies, isGoodResponse, itemsPerPage}:{movies: MovieInt
         const newOffset = (event.selected * itemsPerPage) % movies.length;
         setItemOffset(newOffset);
   };
-  if(movies.length < 2) {
-    return;
-  }
+
   return (
-    <div className="">            
-        <h2>Previous Results</h2>
-        <ul>
-            {currentItems.map((movie:MovieInterface) => {
-            if (movies[0] === movie) {
-                return !isGoodResponse ? (
-                <li key={movie.imdbID} className="mb-4">
+    <section aria-labelledby={id} className={ComponentStyles.searchedMoviesWrapper}>            
+        <h2 id={id} className={ElementStyle.subtitle}>Previous Results</h2>
+        <ul className={ComponentStyles.searchedMoviesGrid}>
+            {currentItems.map((movie:MovieInterface) => {            
+                return (
+                    <li key={movie.imdbID}>
                     <MovieCard movie={movie} />
-                </li>
-                ) : null;
-            }
-            return (
-                <li key={movie.imdbID} className="mb-4">
-                <MovieCard movie={movie} />
-                </li>
-            );
+                    </li>
+                );
             })}
         </ul> 
         {movies.length > 5 
@@ -48,7 +43,7 @@ const MoviesSearched = ({movies, isGoodResponse, itemsPerPage}:{movies: MovieInt
         /> : null
         }
         
-    </div>
+    </section>
   )
 }
 export default React.memo(MoviesSearched)
