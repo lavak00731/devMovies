@@ -20,7 +20,7 @@ export const Btn: React.FC<BtnInterface> = ({
           onClick={onClick}
           {...(ariaExpanded ? { 'aria-expanded': ariaExpandedValue } : {})}
           aria-controls={id}
-          className={className + " flex gap-1.5"}
+          className={className}
           type={type}
         >
           {hasIcon && isLabelVisible && Icon ? (
@@ -44,7 +44,7 @@ export const Btn: React.FC<BtnInterface> = ({
         onClick={onClick}
         {...(ariaExpanded ? { 'aria-expanded': ariaExpandedValue } : {})}
         aria-controls={id}
-        className={className + " flex gap-1.5"}
+        className={className}
         type={type}
       >
         {hasIcon && isLabelVisible && Icon ? (
@@ -66,7 +66,7 @@ export const Btn: React.FC<BtnInterface> = ({
     if (iconRight) {
       return (
         <button
-          className={className + " flex gap-1.5"}
+          className={className + ' icon-right'}
           type={type}
         >
           {hasIcon && isLabelVisible && Icon ? (
@@ -87,7 +87,7 @@ export const Btn: React.FC<BtnInterface> = ({
     }
     return (
       <button
-        className={className + " flex gap-1.5"}
+        className={className}
         type={type}
       >
         {hasIcon && isLabelVisible && Icon ? (

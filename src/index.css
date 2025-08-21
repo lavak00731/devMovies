@@ -20,3 +20,13 @@
   font-weight: 700;
   font-style: normal;
 }
+button > .lucide {
+  display: inline-block;
+  margin-left: 1rem;
+}
+button.icon-right > .lucide {
+  margin-right: 1rem;
+}
+button:has(.sr-only) > .lucide {
+  margin:0;
+}

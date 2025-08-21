@@ -41,7 +41,7 @@ export const SearchForm = () => {
           </div>
           <div>
             <Btn 
-            className={ElementStyle.btn}
+            className={ElementStyle.btn+" max-w-[211px]"}
             label="Search" 
             hasIcon={true} 
             iconRight={true}

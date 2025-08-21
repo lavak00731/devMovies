@@ -1,10 +1,11 @@
 import { NavLink } from "react-router";
 import { TemplateForm } from "./forms/TemplateForm";
 import ElementStyle from "../styles/elements/ElementsStyle";
+import ComponentStyles from "../styles/components/ComponentSlyles";
 
 export const Nav = ({id}:{id:string}) => {
   return (
-    <nav id={id}  aria-label="Main Nav" className={ElementStyle.mainNav}>
+    <nav id={id}  aria-label="Main Nav" className={ComponentStyles.mainNav}>
       <ul className={ElementStyle.menuGrid}>
         <li>
           <NavLink className={ElementStyle.btn}  to="/">Home</NavLink>
