@@ -2,6 +2,7 @@
 
 @theme {  --animate-wiggle: wiggle 0.3s ease-in-out;  @keyframes wiggle {    0%,    100% {      opacity: 0;    }    50% {      opacity: 0.5;    }  100% {      opacity: 1;    } }}
 
+/* custom fonts from google fonts  */
 .oswald-title {
   font-family: "Oswald", sans-serif;
   font-optical-sizing: auto;
@@ -20,6 +21,7 @@
   font-weight: 700;
   font-style: normal;
 }
+/* style button with icons  */
 button > .lucide {
   display: inline-block;
   margin-right: 1rem;
@@ -30,4 +32,36 @@ button.icon-right > .lucide {
 }
 button:has(.sr-only) > .lucide {
   margin:0;
+}
+/* pagination  */
+.pagination {
+  font-family: "Libertinus Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: 2rem;
+    ul {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0 0.5rem;
+    }
+    a[aria-disabled="true"] {
+      color: #343d33;
+      opacity: 0.7;
+    }
+    a {
+      padding: 1rem;
+      cursor: pointer;
+      &:hover,
+      &:focus-visible {
+        outline: 2px solid  #14558A;
+        outline-offset: 1px;
+      }
+    }    
+    li.selected {
+      a {
+        background: #52B788;
+      }
+    }
 }

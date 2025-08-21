@@ -31,16 +31,21 @@ const MoviesSearched = ({movies, itemsPerPage}:{movies: MovieInterface[], itemsP
                 );
             })}
         </ul> 
-        {movies.length > 5 
-         ? <ReactPaginate
-            breakLabel="..."
-            nextLabel="next >"
-            onPageChange={handlePageClick}
-            pageRangeDisplayed={5}
-            pageCount={pageCount}
-            previousLabel="< previous"
-            renderOnZeroPageCount={null}
-        /> : null
+
+        {movies.length > itemsPerPage 
+         ? 
+         <div className="pagination">
+            <ReactPaginate
+                breakLabel="..."
+                nextLabel="next >"
+                onPageChange={handlePageClick}
+                pageRangeDisplayed={itemsPerPage}
+                pageCount={pageCount}
+                previousLabel="< previous"
+                renderOnZeroPageCount={null}
+            />
+         </div>
+          : null
         }
         
     </section>
