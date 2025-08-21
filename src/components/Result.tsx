@@ -7,7 +7,6 @@ import { useSelector } from "react-redux";
 export const Result = ({response, movie, showError}:{response: string, movie?: MovieInterface, showError:boolean}) => {
   const term = useSelector((state:any) => state.search.term); 
   const id = useId();
-  console.log(movie)
 
   return (
     <>

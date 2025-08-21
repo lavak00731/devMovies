@@ -15,7 +15,7 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) =>{
     <>
       <button className="focus:not-sr-only sr-only" onClick={handleClick}>Skip to main content</button>
       <Header />
-      <main ref={btnRef}  tabIndex={-1} aria-labelledby="pageHeading">
+      <main ref={btnRef} className={LayoutStyle.main}  tabIndex={-1} aria-labelledby="pageHeading">
         <div className={LayoutStyle.container}>
           {children}
         </div>        

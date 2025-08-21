@@ -25,7 +25,6 @@ const SearchSlice = createSlice({
             }
         },
         lastMovie: (state, action) => {
-            console.log(action)
             if(!action.payload.Error) {
                 const isNotOnTheList = state.movies.find((movie) => movie.imdbID === action.payload.imdbID );
                 if(!isNotOnTheList) {
