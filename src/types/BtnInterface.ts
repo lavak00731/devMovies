@@ -6,6 +6,9 @@ export interface BtnInterface {
     type: "button" | "submit" | "reset",
     className: string,
     Icon?: React.ElementType, 
-    isLabelVisible?:boolean,    
-    onClick?: () => void
+    isLabelVisible?:boolean,  
+    ariaExpanded?: boolean,  
+    ariaExpandedValue?: "true" | "false",
+    onClick?: () => void,
+    id?:string
 }
