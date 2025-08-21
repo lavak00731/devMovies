@@ -18,9 +18,9 @@ const MovieCard = ({movie}:{movie:MovieInterface}) => {
         </figure>
         <div className="border-t-2 border-neutral-700 pt-4">
           <h2 className="text-xl font-bold oswald-title mb-4">{movie.Title}</h2>
-          <p className="text-base text-neutral-500 mb-2 [&:not(:last-child)]:mb-2 .libertinus-sans-regular">Year: {movie.Year}</p>
-          <p className="text-base text-neutral-500 mb-2 [&:not(:last-child)]:mb-2 .libertinus-sans-regular">Genre: {movie.Genre}</p>
-          <p className="text-base text-neutral-500 mb-2 [&:not(:last-child)]:mb-2 .libertinus-sans-regular">Awards: {movie.Awards}</p>
+          <p className={ElementStyle.paragraph}>Year: {movie.Year}</p>
+          <p className={ElementStyle.paragraph}>Genre: {movie.Genre}</p>
+          <p className={ElementStyle.paragraph}>Awards: {movie.Awards}</p>
           <div className="mt-4">
             <Link to={`/movie/${movie.imdbID}`} state={movie} className={ElementStyle.btn}>
               Read More <span className="sr-only">about {movie.Title} </span>
