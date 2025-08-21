@@ -19,7 +19,6 @@ export const SearchForm = () => {
       dispatch(responseType(true))
       dispatch(searching(false));
       dispatch(addMovies(data));
-
       return
     }
     dispatch(lastMovie(null));

@@ -16,7 +16,7 @@ export const MovieGrid = () => {
         {
           term !== '' ? <>
             {isSearching && <Loading />}
-              <Result response={isGoodResponse} movie={lastMovie} /> 
+            <Result response={isGoodResponse} movie={lastMovie} /> 
           </> :null
         }            
         {
