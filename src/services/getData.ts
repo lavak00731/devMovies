@@ -1,7 +1,6 @@
-import apiKey from "../../env/env"
 const getData = async (query: string) => {
 
-    const url = `http://www.omdbapi.com/?apikey=${apiKey}&t=${query}&type=movie&plot=full`
+    const url = `http://www.omdbapi.com/?apikey=e2a237ec&t=${query}&type=movie&plot=full`
     const encoded = encodeURI(url);
     try {
         const response = await fetch(encoded);
