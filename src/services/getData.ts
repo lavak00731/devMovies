@@ -1,6 +1,6 @@
 const getData = async (query: string) => {
 
-    const url = `http://www.omdbapi.com/?apikey=e2a237ec&t=${query}&type=movie&plot=full`
+    const url = `https://www.omdbapi.com/?apikey=e2a237ec&t=${query}&type=movie&plot=full`
     const encoded = encodeURI(url);
     try {
         const response = await fetch(encoded);
