@@ -9,6 +9,8 @@ const ComponentStyles = {
     searchedMoviesGrid:"w-full flex flex-row flex-wrap items-center justify-center gap-4",
     movieCardWrapper: "rounded border-2 border-neutral-700 p-4 max-w-80 mb-1",
     movieCardPosterWrapper: "mb-2 h-[421px] flex flex-col items-center overflow-hidden", 
+    movieInfoWrapper: "flex flex-col gap-4 items-start md:flex-row md:justify-center",
+    movieInfoFigure: "max-w-[48%] p-2 border-2 border-neutral-700 min-w-[320px",
     footer: 'bg-green-400 py-9'
 }
 export default ComponentStyles;
