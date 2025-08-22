@@ -1,4 +1,3 @@
-import React from 'react'
 import ComponentStyles from '../styles/components/ComponentSlyles'
 
 export const MainHeading = ({text}:{text:string}) => {

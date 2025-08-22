@@ -1,4 +1,4 @@
-import { useEffect, useId, useRef, useState } from "react";
+import { useId } from "react";
 import type { MovieInterface } from "../types/MovieInterface"
 import  MovieCard from "./MovieCard";
 import { useSelector } from "react-redux";

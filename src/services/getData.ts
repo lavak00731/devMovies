@@ -8,7 +8,7 @@ const getData = async (query: string) => {
         const jsonData = await response.json();
         return await jsonData;
     } catch (error) {
-       throw new Error(error);
+       throw new Error(String(error));
     }
 }
 export default getData;
