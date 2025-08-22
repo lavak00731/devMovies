@@ -6,10 +6,13 @@ import { MainHeading } from "../components/MainHeading";
 import { MovieInfo } from "../components/MovieInfo";
 
 export const MoviePage = () => {
-  useChangeTitle("Movie Page");
+  
   const location = useLocation();
   const receivedData = location.state;
-  console.log(receivedData)
+  useChangeTitle(receivedData.Title + " - DevMovies");
+ if (!receivedData) {
+    return <div>Error: No movie data available.</div>;
+ }
   return (
     <MainLayout>
       <ViewLayout>
