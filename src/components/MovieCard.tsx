@@ -4,6 +4,7 @@ import type { MovieInterface } from '../types/MovieInterface';
 import ElementStyle from '../styles/elements/ElementsStyle';
 import { FallbackImage } from './FallbackImage';
 import { Link } from 'react-router';
+import ComponentStyles from '../styles/components/ComponentSlyles';
 
 const MovieCard = ({movie}:{movie:MovieInterface}) => {
   console.log(movie)
@@ -12,15 +13,15 @@ const MovieCard = ({movie}:{movie:MovieInterface}) => {
   }
   
   return (
-    <div className="rounded border-2 border-neutral-700 p-4 max-w-80 mb-1">
-        <figure className="mb-2 min-h-[421px] flex flex-col items-center">
+    <div className={ComponentStyles.movieCardWrapper}>
+        <figure className={ComponentStyles.movieCardPosterWrapper}>
           <FallbackImage src={movie.Poster} alt=""/>
         </figure>
         <div className="border-t-2 border-neutral-700 pt-4">
-          <h2 className="text-xl font-bold oswald-title mb-4">{movie.Title}</h2>
+          <h2 className={ElementStyle.subtitle}>{movie.Title}</h2>
           <p className={ElementStyle.paragraph}>Year: {movie.Year}</p>
           <p className={ElementStyle.paragraph}>Genre: {movie.Genre}</p>
-          <p className={ElementStyle.paragraph}>Awards: {movie.Awards}</p>
+          <p className={ElementStyle.paragraph}>Director: {movie.Director}</p>
           <div className="mt-4">
             <Link to={`/movie/${movie.imdbID}`} state={movie} className={ElementStyle.btn}>
               Read More <span className="sr-only">about {movie.Title} </span>

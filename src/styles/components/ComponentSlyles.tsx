@@ -7,6 +7,8 @@ const ComponentStyles = {
     resultWrapper: "border-t-2 border-zinc-800 p-4 flex flex-col items-center gap-4",
     searchedMoviesWrapper:"flex flex-col gap-4 items-center p-6",
     searchedMoviesGrid:"w-full flex flex-row flex-wrap items-center justify-center gap-4",
+    movieCardWrapper: "rounded border-2 border-neutral-700 p-4 max-w-80 mb-1",
+    movieCardPosterWrapper: "mb-2 h-[421px] flex flex-col items-center overflow-hidden", 
     footer: 'bg-green-400 py-9'
 }
 export default ComponentStyles;
